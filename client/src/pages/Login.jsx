@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { authService } from '../services/api';
 import { Pill, Lock, User } from 'lucide-react';
@@ -79,6 +79,9 @@ const Login = () => {
             {loading ? 'Signing in...' : 'Sign In'}
           </button>
         </form>
+        <div className="text-center" style={{ marginTop: '1rem' }}>
+          <Link to="/register" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>Don't have an account? Register</Link>
+        </div>
       </div>
     </div>
   );
