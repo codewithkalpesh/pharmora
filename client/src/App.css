@@ -1,0 +1,187 @@
+/* Pharmora Pharmacy Management System - Global Styles */
+
+/* ===== SIDEBAR NAVIGATION LINKS ===== */
+.sidebar-link:hover {
+  background-color: rgba(37, 99, 235, 0.06);
+  color: var(--primary);
+}
+
+.sidebar-link:active {
+  transform: scale(0.99);
+}
+
+/* ===== LOADING STATE ===== */
+.loading-spinner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ===== TABLE ROWS ===== */
+tbody tr:hover {
+  background-color: rgba(37, 99, 235, 0.02);
+}
+
+/* ===== MODAL OVERLAY SCROLL LOCK ===== */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* ===== BUTTONS RESETS ===== */
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===== ACTIVE SIDEBAR ROUTE HIGHLIGHT ===== */
+.sidebar-link.active {
+  background-color: rgba(37, 99, 235, 0.1);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ===== SELECT STYLING ===== */
+select.input-field {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  padding-right: 2.5rem;
+}
+
+/* ===== TEXTAREA STYLING ===== */
+textarea.input-field {
+  resize: vertical;
+}
+
+/* ===== SCROLLBAR STYLING ===== */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* ===== PRINT STYLES FOR POS RECEIPT ===== */
+@media print {
+  body > * {
+    display: none !important;
+  }
+
+  #printable-receipt {
+    display: block !important;
+    width: 80mm;
+    margin: 0 auto;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    color: black;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* ===== CARD HOVER EFFECT ===== */
+.card {
+  transition: box-shadow 0.2s ease;
+}
+
+/* ===== INPUT FOCUS WITHIN GROUP ===== */
+.input-group:focus-within .input-label {
+  color: var(--primary);
+}
+
+/* ===== POS Screen Layout Fill ===== */
+.pos-screen {
+  height: calc(100vh - 128px);
+}
+
+/* ===== BADGE / STATUS TAGS ===== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.125rem 0.5rem;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.badge-success {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: var(--success);
+}
+
+.badge-danger {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--danger);
+}
+
+.badge-warning {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: var(--warning);
+}
+
+.badge-primary {
+  background-color: rgba(37, 99, 235, 0.1);
+  color: var(--primary);
+}
+
+/* ===== NOTIFICATIONS DOT ===== */
+.notif-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--danger);
+  margin-left: 4px;
+  vertical-align: middle;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* ===== DASHED UPLOAD ZONE ===== */
+.upload-zone {
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  text-align: center;
+  transition: border-color 0.2s, background-color 0.2s;
+  cursor: pointer;
+}
+
+.upload-zone:hover {
+  border-color: var(--primary);
+  background-color: rgba(37, 99, 235, 0.02);
+}
+
+/* ===== FADE IN ANIMATION ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.2s ease forwards;
+}
